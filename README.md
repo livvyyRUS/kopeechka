@@ -25,7 +25,23 @@ api = MailActivations(api_token="TOKEN")
 ```
 
 ## Logger
-You can change settings of the logger
+You can set logger with your settings
+
+```python
+from kopeechka import Logger, MailActivations
+
+new_logger = Logger() # In the arguments you can set the settings
+
+api = MailActivations(api_token="TOKEN", logger=new_logger)
+```
+
+You also can disable a logger
+```python
+import logging
+
+logger = logging.getLogger("kopeechka")
+logger.setLevel(logging.CRITICAL + 1)
+```
 
 ## Exception handling
 
